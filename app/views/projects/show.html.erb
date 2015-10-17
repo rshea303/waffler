@@ -2,6 +2,10 @@
   <h1><%= @project.name %></h1>
 </div>
 
+<div class="add-item">
+  <%= link_to "Add New Item", new_project_item_path(@project) %>
+</div>
+
 <div class="project-statuses">
 
   <h2 class="status">Backlog</h2>
