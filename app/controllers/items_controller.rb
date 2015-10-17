@@ -7,8 +7,8 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     project = Project.find_by(id: params[:project_id])
-    # require "pry"; binding.pry
     if @item.save
+      project.items << @item
       redirect_to project_path(project)
     else
       render :new
