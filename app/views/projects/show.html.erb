@@ -8,15 +8,18 @@
 
 <div class="project-statuses">
 
-  <h2 class="status">Backlog</h2>
-  <ul>
-    <% @items.each do |item| %>
-      <li>
-      <%= item.title %><br>
-      <%= item.description %>
-      </li>
-    <% end %>
-  </ul>
+  <div class="status">
+    <h2>Backlog</h2>
+    <ul>
+      <% @items.each do |item| %>
+        <li>
+        <%= item.title %><br>
+        <%= item.description %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
   <h2 class="status">Ready</h2>
 
   <h2 class="status">In Progress</h2>
