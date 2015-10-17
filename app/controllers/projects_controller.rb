@@ -6,7 +6,9 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find_by(id: params[:id])
-    @items = @project.items
+    # @items = @project.items
+    @backlogs = @project.backlogged_items
+    @ready = @project.ready_items
   end
 
   def new
