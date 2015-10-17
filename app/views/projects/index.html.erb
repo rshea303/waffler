@@ -1,5 +1,9 @@
 <h1>Welcome to your Waffler</h1>
 
+<div class="creator">
+  <%= link_to "Create Project", new_project_path %>
+</div>
+
 <ul>
   <% @projects.each do |project| %>
     <li><%= link_to project.name, project_path(project) %></li>
