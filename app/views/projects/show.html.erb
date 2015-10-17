@@ -10,8 +10,8 @@
 
   <div class="status">
     <h2>Backlog</h2>
-    <ul>
-      <% @items.each do |item| %>
+    <ul id="backlog">
+      <% @backlogs.each do |item| %>
         <li>
         <%= item.title %><br>
         <%= item.description %>
@@ -20,7 +20,17 @@
     </ul>
   </div>
 
-  <h2 class="status">Ready</h2>
+  <div class="status">
+    <h2>Ready</h2>
+    <ul id="ready">
+      <% @ready.each do |item| %>
+        <li>
+        <%= item.title %><br>
+        <%= item.description %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 
   <h2 class="status">In Progress</h2>
 
