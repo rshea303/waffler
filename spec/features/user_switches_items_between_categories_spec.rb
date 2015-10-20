@@ -1,3 +1,6 @@
+require "rails_helper"
+require_relative "../support/project_creator"
+
 describe "user" do
   it "can view items in respective categories" do
     project1 = Project.create(name: "Backlog project")
@@ -20,8 +23,31 @@ describe "user" do
       expect(page).to have_text("buy horse")
       expect(page).not_to have_text("buy icecream")
     end
+  end
 
+  it "can slide item from backlog to ready" do
+      create_project
 
+      click_on("Add New Item")
+      fill_in "Title", with: "First item"
+      fill_in "Description", with: "First item description"
+      click_on("Create Item")
+
+      click_on("Add New Item")
+      fill_in "Title", with: "Second item"
+      fill_in "Description", with: "Second item description"
+      click_on("Create Item")
+
+      within ("#backlog") do
+        click_link("->", match: :first)
+      end
+
+      within ("#ready") do
+        expect(page).to have_text("First item")
+        expect(page).to have_text("First item description")
+        expect(page).not_to have_text("Second item")
+        expect(page).not_to have_text("Second item description")
+      end
 
   end
 
