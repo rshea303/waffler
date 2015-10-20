@@ -41,7 +41,37 @@
     </ul>
   </div>
 
-  <h2 class="status">In Progress</h2>
+  <div class="status">
+    <h2>In Progress</h2>
+    <ul id="progress">
+      <% @progress.each do |item| %>
+        <li>
+        <%= item.title %><br>
+        <%= item.description %>
+        </li>
+        <p>
+        <%= link_to "->", project_item_path(@project, item, format: "->"), method: :put %>
+        </p>
+        <p>
+        <%= link_to "<-", project_item_path(@project, item, format: "<-"), method: :put %>
+        </p>
+      <% end %>
+    </ul>
+  </div>
+  
+  <div class="status">
+    <h2>Done</h2>
+    <ul id="done">
+      <% @done.each do |item| %>
+        <li>
+        <%= item.title %><br>
+        <%= item.description %>
+        </li>
+        <p>
+        <%= link_to "<-", project_item_path(@project, item, format: "<-"), method: :put %>
+        </p>
+      <% end %>
+    </ul>
+  </div>
 
-  <h2 class="status">Done</h2>
 </div>
