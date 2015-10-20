@@ -6,4 +6,9 @@ class Item < ActiveRecord::Base
     self.category_id += 1
     self.save
   end
+
+  def move_backward
+    self.category_id -=1
+    self.save
+  end
 end

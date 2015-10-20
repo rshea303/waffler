@@ -31,6 +31,12 @@
         <%= item.title %><br>
         <%= item.description %>
         </li>
+        <p>
+        <%= link_to "->", project_item_path(@project, item, format: "->"), method: :put %>
+        </p>
+        <p>
+        <%= link_to "<-", project_item_path(@project, item, format: "<-"), method: :put %>
+        </p>
       <% end %>
     </ul>
   </div>
