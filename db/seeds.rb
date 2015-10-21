@@ -1,7 +1,9 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+def build_items
+  project = Project.create(name: "The Greatest Pivot Ever!")
+
+  project.items.create(title: "Design wireframe", description: "build wireframe for design and layout of site")
+  project.items.create(title: "Establish schema", description: "determine relationships between models")
+  project.items.create(title: "Authenticate user", description: "use bcrypt to authenticate user")
+end
+
+build_items

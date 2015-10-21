@@ -5,10 +5,11 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.find_by(id: params[:id])
-    # @items = @project.items
+    @project  = Project.find_by(id: params[:id])
     @backlogs = @project.backlogged_items
-    @ready = @project.ready_items
+    @ready    = @project.ready_items
+    @progress = @project.in_progress_items
+    @done     = @project.done_items
   end
 
   def new

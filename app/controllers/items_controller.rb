@@ -15,6 +15,20 @@ class ItemsController < ApplicationController
     end
   end
 
+  def update
+    item = Item.find(params[:id])
+    project = Project.find(params[:project_id])
+
+    if params[:format] == '->'
+      item.move_forward  
+    elsif params[:format] == '<-'
+      item.move_backward
+    else
+      # update the item details
+    end
+    redirect_to project_path(project)
+  end
+
   private
 
   def item_params
