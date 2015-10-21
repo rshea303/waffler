@@ -3,9 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /* Project show page */
+.project-statuses {
+  width: 100%;
+  margin: 0 auto 0 auto;
+}
+
 .status {
   float: left;
-  margin-left: 1em;
+  margin: 1em;
   border: 2px solid black;
   width: 250px;
   height: 1000px;

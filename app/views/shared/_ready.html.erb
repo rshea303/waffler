@@ -1,0 +1,22 @@
+<div class="status">
+  <h3>Ready</h3>
+  <ul id="ready">
+    <% @ready.each do |item| %>
+      <div class="item-container">
+        <li>
+        <%= item.title %></br>
+        <%= item.description %>
+        </li>
+        <div class="arrow-container">
+          <div class="left-arrow">
+            <%= link_to "<-", project_item_path(@project, item, format: "<-"), method: :put %>
+          </div>
+          <div class="right-arrow">
+            <%= link_to "->", project_item_path(@project, item, format: "->"), method: :put %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </ul>
+</div>
+

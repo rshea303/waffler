@@ -7,87 +7,10 @@
 </div>
 
 <div class="project-statuses">
-
-  <div class="status">
-    <h2>Backlog</h2>
-    <ul id="backlog">
-      <% @backlogs.each do |item| %>
-        <div class="item-container">
-          <li>
-            <%= item.title %><br>
-            <%= item.description %>
-          </li>
-          <div class="arrow-container">
-            <div class="right-arrow">
-              <%= link_to "->", project_item_path(@project, item, format: "->"), method: :put %>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </ul>
-  </div>
-
-  <div class="status">
-    <h2>Ready</h2>
-    <ul id="ready">
-      <% @ready.each do |item| %>
-        <div class="item-container">
-          <li>
-          <%= item.title %></br>
-          <%= item.description %>
-          </li>
-          <div class="arrow-container">
-            <div class="left-arrow">
-              <%= link_to "<-", project_item_path(@project, item, format: "<-"), method: :put %>
-            </div>
-            <div class="right-arrow">
-              <%= link_to "->", project_item_path(@project, item, format: "->"), method: :put %>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </ul>
-  </div>
-
-  <div class="status">
-    <h2>In Progress</h2>
-    <ul id="progress">
-      <% @progress.each do |item| %>
-        <div class="item-container">
-          <li>
-            <%= item.title %><br>
-            <%= item.description %>
-          </li>
-          <div class="arrow-container">
-            <div class="left-arrow">
-              <%= link_to "<-", project_item_path(@project, item, format: "<-"), method: :put %>
-            </div>
-            <div class="right-arrow">
-              <%= link_to "->", project_item_path(@project, item, format: "->"), method: :put %>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </ul>
-  </div>
   
-  <div class="status">
-    <h2>Done</h2>
-    <ul id="done">
-      <% @done.each do |item| %>
-        <div class="item-container">
-          <li>
-            <%= item.title %><br>
-            <%= item.description %>
-          </li>
-          <div class="arrow-container">
-            <div class="left-arrow">
-              <%= link_to "<-", project_item_path(@project, item, format: "<-"), method: :put %>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </ul>
-  </div>
-
+  <%= render 'shared/backlog' %>
+  <%= render 'shared/ready' %>
+  <%= render 'shared/in_progress' %>
+  <%= render 'shared/done' %>
+ 
 </div>
