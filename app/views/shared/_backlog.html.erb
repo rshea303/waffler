@@ -1,0 +1,21 @@
+<div class="status">
+  <h5>Backlog</h5>
+  <ul id="backlog">
+    <% @backlogs.each do |item| %>
+      <div class="item-container">
+        <div class="item-title">
+          <%= item.title %>
+        </div>
+        <div class="item-description">
+          <%= item.description %>
+        </div>
+        <div class="arrow-container">
+          <div class="right-arrow">
+            <%= link_to "->", project_item_path(@project, item, format: "->"), method: :put %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </ul>
+</div>
+
