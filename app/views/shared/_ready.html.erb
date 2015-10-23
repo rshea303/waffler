@@ -1,7 +1,7 @@
 <div class="status">
   <h5>Ready</h5>
   <ul id="ready">
-    <% @ready.each do |item| %>
+    <% @project_presenter.ready.each do |item| %>
       <div class="item-container">
         <div class="item-title">
           <%= item.title %>

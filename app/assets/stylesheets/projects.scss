@@ -53,27 +53,23 @@ a {
   text-decoration: none;
 }
 
-li {
-  list-style: none;
-  text-align: left;
-  padding-left: 5px
-}
-
 .item-container {
-  border: 1px solid blue;
+  box-shadow: 3px 2px 2px gray;
   margin: 5px;
-  background-color: #B5DBE8;
+  background-color: white;
 }
 
 .item-title {
   text-align: left;
-  background-color: #307D96;
+  background-color: black;
+  color: white;
   padding-left: 5px;
 }
 
 .item-description {
   text-align: left;
   padding-left: 5px;
+  background-color: white;
 }
 
 .arrow-container {
